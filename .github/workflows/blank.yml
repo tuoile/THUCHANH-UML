@@ -3,7 +3,7 @@ name: Deploy react app to GitHub Pages
 on:
   push:
     branches:
-      - master
+      - main
 jobs:
   build:
 
@@ -21,6 +21,6 @@ jobs:
       uses: JamesIves/github-pages-deploy-action@releases/v3
       with:
         ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
-        BASE_BRANCH: master
+        BASE_BRANCH: main
         BRANCH: gh-pages
         FOLDER: build
