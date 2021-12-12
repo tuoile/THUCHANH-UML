@@ -1,26 +1,15 @@
-name: Deploy react app to GitHub Pages
-
-on:
-  push:
-    branches:
-      - main
-jobs:
-  build:
-
-    runs-on: ubuntu-latest
-
-    steps:
-    - name: Checkout
-      uses: actions/checkout@v1
-
-    - name: Build
-      run: |
-        npm install
-        npm run-script build
-    - name: Build and Deploy
-      uses: JamesIves/github-pages-deploy-action@releases/v3
-      with:
-        ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
-        BASE_BRANCH: main
-        BRANCH: gh-pages
-        FOLDER: build
++name: hello-world
++on: push
+ jobs:
+-  build:
+-    name: Hello world action
++  my-job:
+     runs-on: ubuntu-latest
+     steps:
+-      - uses: actions/checkout@v1
+-      - uses: ./action-a
+-        with:
+-          MY_NAME: "Mona"
++      - name: "Mona"
++        run: echo "Hello World!"
++        
